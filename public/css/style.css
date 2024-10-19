@@ -5,46 +5,113 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f4f8;
-    color: #333;
-}
-
-header {
-    background-color: #6200ea;
-    color: white;
-    padding: 1rem;
-    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    padding-top: 50px;
 }
 
 .title-todo-list {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    color: #4e4e8f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-to-do-list {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.To-add-new-task {
+    background-color: #5a5df9;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.To-add-new-task:hover {
+    background-color: #4a4cc7;
+}
+
+.container-task {
+    background-color: #f9f9ff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.container-task input[type="checkbox"] {
+    margin-right: 15px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.container-task label {
+    font-size: 1rem;
+    color: #333;
+    flex-grow: 1;
+}
+
+.container-task .icons {
+    display: flex;
+    align-items: center;
+}
+
+.container-task .icons button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.container-task .icons button img {
+    width: 20px;
+    height: 20px;
 }
 
 .modal {
     display: none;
     position: fixed;
-    top: 0;
+    z-index: 1;
     left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
 }
 
-.container {
+.modal .container {
     background-color: white;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
     max-width: 400px;
-    width: 90%;
-    margin: auto;
+    margin: 100px auto;
+    position: relative;
 }
 
 .title-modal {
-    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #4e4e8f;
+    margin-bottom: 15px;
 }
 
 .form-modal {
@@ -53,76 +120,82 @@ header {
 }
 
 .input-task {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 1rem;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
     font-size: 1rem;
 }
 
 .button-add {
-    background-color: #6200ea;
+    background-color: #5a5df9;
     color: white;
     border: none;
-    padding: 0.5rem;
-    border-radius: 4px;
+    padding: 10px;
     font-size: 1rem;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .button-add:hover {
-    background-color: #3700b3;
+    background-color: #4a4cc7;
 }
 
-.content-to-do-list {
-    padding: 1rem;
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-.container-task {
-    margin-top: 1rem;
-}
-
-.description-box {
-    background-color: #e1bee7;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background-color: #f1f1ff;
+    font-size: 1rem;
+    margin-left: 15px;
 }
 
 .button-remove {
-    background-color: #f44336;
-    color: white;
+    background-color: #ff6b6b;
     border: none;
-    padding: 0.5rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    width: 27px;
+    height: 25px;
+    border-radius: 5px;
 }
 
 .button-remove:hover {
-    background-color: #d32f2f;
+    background-color: red;
 }
 
-footer {
-    text-align: center;
-    padding: 1rem;
-}
-
-.To-add-new-task {
-    background-color: #6200ea;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
+.checkbox-task {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: #f0f0f0;
+    border: 2px solid #c6c6c6;
     border-radius: 4px;
-    font-size: 1.5rem;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.To-add-new-task:hover {
-    background-color: #3700b3;
+@media (max-width: 768px) {
+    .content-to-do-list {
+        padding: 15px;
+    }
+
+    .modal .container {
+        padding: 15px;
+    }
+
+    .title-todo-list,
+    .title-modal {
+        font-size: 2rem;
+    }
 }
