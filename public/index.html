@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio de despesas domesticas</title>
+    <title>Desafio Gestão de tarefas</title>
     <link rel="stylesheet" href="css/style.css">
     <script type="module" src="js/index.js" defer></script>
     <script type="module" src="/public/js/models/addNewTask.js"></script>
@@ -16,6 +16,12 @@
             <h1 class="title-todo-list">Gestão de tarefas</h1>
         </section>
     </header>
+    <aside class="content-to-do-list">
+        <button class="To-add-new-task">Adicionar tarefa</button>
+        <section class="container">
+            <span class="container-task"></span>
+        </section>
+    </aside>
     <main>
         <section class="modal" id="expenseModal">
             <article class="container">
@@ -29,14 +35,6 @@
             </article>
         </section>
     </main>
-    <aside class="content-to-do-list">
-        <section class="container">
-            <span class="container-task"></span>
-        </section>
-    </aside>
-    <footer>
-        <button class="To-add-new-task">+</button>
-    </footer>
 </body>
 
 </html>
